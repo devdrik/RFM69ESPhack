@@ -2,16 +2,16 @@
 #include <RFM69registers.h>
 
 
-bool MyRFM69::canSend(){
+bool RFM69::canSend(){
   delay(1);
   RFM69::canSend();
 }
 
-void MyRFM69::setLongRange(){
+void RFM69::setLongRange(){
     RFM69::writeReg(0x58, 0x2D);    //enables low noise pre-amp to increase sensitivity by 2-3db
 }
 
-bool MyRFM69::initialize(uint8_t freqBand, uint8_t nodeID, uint8_t networkID)
+bool RFM69::initialize(uint8_t freqBand, uint8_t nodeID, uint8_t networkID)
 {
   _interruptNum = digitalPinToInterrupt(_interruptPin);
   if (_interruptNum == NOT_AN_INTERRUPT) return false;
