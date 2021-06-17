@@ -4,7 +4,7 @@
 
 bool RFM69ESPhack::canSend(){
   delay(1);
-  RFM69::canSend();
+  return RFM69::canSend();
 }
 
 void RFM69ESPhack::setLongRange(){
